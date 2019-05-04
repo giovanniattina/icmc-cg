@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <shader.hpp>
 
 namespace cgicmc {
 
@@ -23,10 +24,12 @@ public:
 
   ///
   /// Run the application in a loop.
-  void run();
+  virtual void run();
+
+  static void framebufferCallback(GLFWwindow *window, int width, int height);
 
 protected:
-  void processInput(GLFWwindow *window);
+  virtual void processInput();
 
   int _viewPortSize;
   GLFWwindow *_window;
